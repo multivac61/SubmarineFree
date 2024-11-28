@@ -183,11 +183,11 @@ struct EN104 : SchemeModuleWidget {
 		for (int i = 0; i < 4; i++) {
 			addInput(createInputCentered<SilverPort>(Vec(45 + 30 * i, 33), module, EN_104::INPUT_1 + i));
 			addOutput(createOutputCentered<SilverPort>(Vec(45 + 30 * i, 67), module, EN_104::OUTPUT_1 + i));
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 103 + 70 * i), module, EN_104::PARAM_A1 + i));
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(45, 103 + 70 * i), module, EN_104::PARAM_D1 + i));
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(75, 103 + 70 * i), module, EN_104::PARAM_S1 + i));
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(105, 103 + 70 * i), module, EN_104::PARAM_R1 + i));
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(135, 103 + 70 * i), module, EN_104::PARAM_T1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 103 + 70 * i), module, EN_104::PARAM_A1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(45, 103 + 70 * i), module, EN_104::PARAM_D1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(75, 103 + 70 * i), module, EN_104::PARAM_S1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(105, 103 + 70 * i), module, EN_104::PARAM_R1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(135, 103 + 70 * i), module, EN_104::PARAM_T1 + i));
 			addInput(createInputCentered<SilverPort>(Vec(15, 137 + 70 * i), module, EN_104::INPUT_A1 + i));
 			addInput(createInputCentered<SilverPort>(Vec(45, 137 + 70 * i), module, EN_104::INPUT_D1 + i));
 			addInput(createInputCentered<SilverPort>(Vec(75, 137 + 70 * i), module, EN_104::INPUT_S1 + i));

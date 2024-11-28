@@ -119,8 +119,8 @@ struct LD103 : SchemeModuleWidget {
 			addInput(createInputCentered<SilverPort>(Vec(15,31.5 + offset), module, LD_1<3>::INPUT_1 + i));
 
 			addOutput(createOutputCentered<BluePort>(Vec(15,115.5 + offset), module, LD_1<3>::OUTPUT_1 + i));
-			cutoffWidgets[i] = createParamCentered<TinyKnob<LightKnob>>(Vec(15, 57.5 + offset), module, LD_1<3>::PARAM_CUTOFF_1 + i);
-			widthWidgets[i] = createParamCentered<TinyKnob<LightKnob>>(Vec(15, 89.5 + offset), module, LD_1<3>::PARAM_WIDTH_1 + i);
+			cutoffWidgets[i] = createParamCentered<TinyKnob<SubmarineLightknob>>(Vec(15, 57.5 + offset), module, LD_1<3>::PARAM_CUTOFF_1 + i);
+			widthWidgets[i] = createParamCentered<TinyKnob<SubmarineLightknob>>(Vec(15, 89.5 + offset), module, LD_1<3>::PARAM_WIDTH_1 + i);
 			addParam(cutoffWidgets[i]);
 			addParam(widthWidgets[i]);
 		}
@@ -174,8 +174,8 @@ struct LD106 : SchemeModuleWidget {
 
 			addOutput(createOutputCentered<BluePort>(Vec(74.5,31.5 + offset), module, LD_1<6>::OUTPUT_1 + i));
 
-			cutoffWidgets[i] = createParamCentered<SmallKnob<LightKnob>>(Vec(16, 59 + offset), module, LD_1<6>::PARAM_CUTOFF_1 + i);
-			widthWidgets[i] = createParamCentered<SmallKnob<LightKnob>>(Vec(74, 59 + offset), module, LD_1<6>::PARAM_WIDTH_1 + i);
+			cutoffWidgets[i] = createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(16, 59 + offset), module, LD_1<6>::PARAM_CUTOFF_1 + i);
+			widthWidgets[i] = createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(74, 59 + offset), module, LD_1<6>::PARAM_WIDTH_1 + i);
 			addParam(cutoffWidgets[i]);
 			addParam(widthWidgets[i]);
 		}

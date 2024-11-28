@@ -260,18 +260,18 @@ struct SN_1 : Module {
 };
 
 struct SN101 : SchemeModuleWidget {
-	LightKnob *lengthKnob;
+	SubmarineLightknob *lengthKnob;
 	SN101(SN_1 *module) : SchemeModuleWidget() {
 		setModule(module);
 		this->box.size = Vec(30, 380);
 		addChild(new SchemePanel(this->box.size));
 
 		addInput(createInputCentered<SilverPort>(Vec(15,31.5), module, SN_1::INPUT_FREQ));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 70), module, SN_1::PARAM_FREQ));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 70), module, SN_1::PARAM_FREQ));
 
 		addInput(createInputCentered<SilverPort>(Vec(15,101.5), module, SN_1::INPUT_EVOL));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 140), module, SN_1::PARAM_EVOL));
-		lengthKnob = createParamCentered<SnapKnob<SmallKnob<LightKnob>>>(Vec(15, 170), module, SN_1::PARAM_LENGTH);
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 140), module, SN_1::PARAM_EVOL));
+		lengthKnob = createParamCentered<SnapKnob<SubmarineSmallKnob<SubmarineLightknob>>>(Vec(15, 170), module, SN_1::PARAM_LENGTH);
 		addParam(lengthKnob);
 		addParam(createParamCentered<LightButton>(Vec(20, 210), module, SN_1::PARAM_HARM_2));
 		addParam(createParamCentered<LightButton>(Vec(20, 230), module, SN_1::PARAM_HARM_3));

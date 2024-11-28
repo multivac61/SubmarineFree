@@ -411,8 +411,8 @@ void PO_101::process(const ProcessArgs &args) {
 struct PO_Layout : SchemeModuleWidget {
 	PO_Layout() {};
 	void Layout() {
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(85, 58), module, PO_101::PARAM_FINE));
-		addParam(createParamCentered<NarrowKnob<SnapKnob<MedKnob<LightKnob>>>>(Vec(140, 58), module, PO_101::PARAM_WAVE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(85, 58), module, PO_101::PARAM_FINE));
+		addParam(createParamCentered<NarrowKnob<SnapKnob<MedKnob<SubmarineLightknob>>>>(Vec(140, 58), module, PO_101::PARAM_WAVE));
 
 		addInput(createInputCentered<SilverPort>(Vec(57.5,31.5), module, PO_101::INPUT_NOTE_CV));
 
@@ -435,7 +435,7 @@ struct PO_Layout : SchemeModuleWidget {
 
 		for (int i = 0; i < 4; i++) {
 			addInput(createInputCentered<SilverPort>(Vec(22.5 + 45 * i,272.5), module, PO_101::INPUT_PHASE_1 + i));
-			addParam(createParamCentered<MedKnob<LightKnob>>(Vec(22.5 + 45 * i, 309), module, PO_101::PARAM_PHASE_1 + i));
+			addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(22.5 + 45 * i, 309), module, PO_101::PARAM_PHASE_1 + i));
 			addOutput(createOutputCentered<SilverPort>(Vec(22.5 + 45 * i,345.5), module, PO_101::OUTPUT_17 + i));
 		}
 	}
@@ -497,7 +497,7 @@ struct PO101 : PO_Layout {
 		setModule(module);
 		this->box.size = Vec(180, 380);
 		addChild(new SchemePanel(this->box.size));
-		addParam(createParam<MedKnob<LightKnob>>(Vec(11, 39), module, PO_101::PARAM_TUNE));
+		addParam(createParam<MedKnob<SubmarineLightknob>>(Vec(11, 39), module, PO_101::PARAM_TUNE));
 		Layout();
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {
@@ -511,7 +511,7 @@ struct PO102 : PO_Layout {
 		setModule(module);
 		this->box.size = Vec(180, 380);
 		addChild(new SchemePanel(this->box.size));
-		addParam(createParam<MedKnob<LightKnob>>(Vec(11, 39), module, PO_101::PARAM_TUNE));
+		addParam(createParam<MedKnob<SubmarineLightknob>>(Vec(11, 39), module, PO_101::PARAM_TUNE));
 		Layout();
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {

@@ -8,18 +8,18 @@
 #include "../SubmarineFree.hpp"
 #include "color.hpp"
 
-void LightKnob::setEnabled(int val) {
+void SubmarineLightknob::setEnabled(int val) {
 	enabled = val;
 }
 
-void LightKnob::setRadius(int r) {
+void SubmarineLightknob::setRadius(int r) {
 	Widget *w = dynamic_cast<Widget *>(this);
 	radius = r;
 	w->box.size.x = r * 2;
 	w->box.size.y = r * 2;
 }
 
-void LightKnob::draw(const DrawArgs &args) {
+void SubmarineLightknob::draw(const DrawArgs &args) {
 	nvgSave(args.vg);
 
 	// Shadow
@@ -60,7 +60,7 @@ void LightKnob::draw(const DrawArgs &args) {
 	Knob::draw(args);
 }
 
-void LightKnob::drawLayer(const DrawArgs& args, int layer) {
+void SubmarineLightknob::drawLayer(const DrawArgs& args, int layer) {
 	if (layer == 1) {
 		if (enabled) {
 			drawLight(args);
@@ -71,7 +71,7 @@ void LightKnob::drawLayer(const DrawArgs& args, int layer) {
 	Widget::drawLayer(args, layer);
 }
 
-void LightKnob::drawLight(const DrawArgs &args) {
+void SubmarineLightknob::drawLight(const DrawArgs &args) {
 	NVGcolor lcol = enabled?color:nvgRGB(0x4a, 0x4a, 0x4a);
 	float angle;
 	float value = 0.0f;
@@ -111,7 +111,7 @@ void LightKnob::drawLight(const DrawArgs &args) {
 	}
 }
 
-void LightKnob::drawHalo(const DrawArgs &args) {
+void SubmarineLightknob::drawHalo(const DrawArgs &args) {
 		// Don't draw halo if rendering in a framebuffer, e.g. screenshots or Module Browser
 		if (args.fb)
 			return;

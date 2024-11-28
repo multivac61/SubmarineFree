@@ -427,13 +427,13 @@ struct HS101 : SchemeModuleWidget {
 		addParam(paramRun);
 		addChild(createLightCentered<TinyLight<BlueLight>>(Vec(115, 341), module, HS_101::LIGHT_STORING));
 
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(140, 341), module, HS_101::PARAM_TIME));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(140, 341), module, HS_101::PARAM_TIME));
 
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(170, 341), module, HS_101::PARAM_X_PAN));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(195, 341), module, HS_101::PARAM_X_SCALE));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(170, 341), module, HS_101::PARAM_X_PAN));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(195, 341), module, HS_101::PARAM_X_SCALE));
 
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(225, 341), module, HS_101::PARAM_Y_PAN));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(250, 341), module, HS_101::PARAM_Y_SCALE));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(225, 341), module, HS_101::PARAM_Y_PAN));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(250, 341), module, HS_101::PARAM_Y_SCALE));
 	}
 
 	void appendContextMenu(Menu *menu) override {

@@ -262,14 +262,14 @@ struct PO204 : SchemeModuleWidget {
 		setModule(module);
 		this->box.size = Vec(150, 380);
 		addChild(new SchemePanel(this->box.size));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(79, 38), module, PO_204::PARAM_TUNE));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(124, 38), module, PO_204::PARAM_FINE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(79, 38), module, PO_204::PARAM_TUNE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(124, 38), module, PO_204::PARAM_FINE));
 		addInput(createInputCentered<SilverPort>(Vec(30, 38), module, PO_204::INPUT_TUNE));
 
 		for (int i = 0; i < 4; i++) {
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(17, 101 + 70 * i), module, PO_204::PARAM_WAVE_1 + i));
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(57, 101 + 70 * i), module, PO_204::PARAM_PHASE_1 + i));
-			addParam(createParamCentered<SnapKnob<SmallKnob<LightKnob>>>(Vec(97, 101 + 70 * i), module, PO_204::PARAM_MULT_1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(17, 101 + 70 * i), module, PO_204::PARAM_WAVE_1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(57, 101 + 70 * i), module, PO_204::PARAM_PHASE_1 + i));
+			addParam(createParamCentered<SnapKnob<SubmarineSmallKnob<SubmarineLightknob>>>(Vec(97, 101 + 70 * i), module, PO_204::PARAM_MULT_1 + i));
 			addInput(createInputCentered<SilverPort>(Vec(17, 137.5 + 70 * i), module, PO_204::INPUT_WAVE_1 + i));
 			addInput(createInputCentered<SilverPort>(Vec(57, 137.5 + 70 * i), module, PO_204::INPUT_PHASE_1 + i));
 			addInput(createInputCentered<SilverPort>(Vec(97, 137.5 + 70 * i), module, PO_204::INPUT_MULT_1 + i));

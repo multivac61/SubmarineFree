@@ -10,7 +10,7 @@ namespace {
 	int clipboardColumn = -1;
 	const int bulkParamSize = sizeof(float) * 256;
 
-	struct LTKnob : LightKnob 
+	struct LTKnob : SubmarineLightknob 
 	{
 		std::function<void(ui::Menu *)> contextMenuCallback;
 		void appendContextMenu(ui::Menu *menu) override {
@@ -175,7 +175,7 @@ struct LT116 : SchemeModuleWidget {
 		}
 		addInput(createInputCentered<SilverPort>(Vec(35, 330), module, LT_116::INPUT_1));
 		addOutput(createOutputCentered<SilverPort>(Vec(265, 330), module, LT_116::OUTPUT_1));
-		addParam(createParamCentered<SnapKnob<SmallKnob<LightKnob>>>(Vec(200, 330), module, LT_116::PARAM_OUTPUT_CHANNELS));
+		addParam(createParamCentered<SnapKnob<SubmarineSmallKnob<SubmarineLightknob>>>(Vec(200, 330), module, LT_116::PARAM_OUTPUT_CHANNELS));
 	}
 	void appendOperationMenu(Menu *menu, int row, int column) {
 		if (!module) {
