@@ -93,9 +93,9 @@ struct SubSwitchHorz : k {
 // Buttons
 //////////////////
 
-struct LightButton : app::Switch {
+struct SubmarineLightButton : app::Switch {
 	NVGcolor color = SUBLIGHTBLUE;
-	LightButton(); 
+	SubmarineLightButton(); 
 	void draw(const DrawArgs &args) override;
 	void drawLayer(const DrawArgs &args, int layer) override;
 	void drawLight(const DrawArgs &args, bool enabled);

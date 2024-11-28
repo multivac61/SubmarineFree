@@ -401,7 +401,7 @@ struct XF102 : SchemeModuleWidget {
 			addChild(createLightCentered<TinyLight<BlueRedLight>>(Vec(142.5, 68.5 + offset), module, XF_102::LIGHT_AUTO_1 + i * 2));
 		}
 
-		addParam(createParamCentered<LightButton>(Vec(98, 102.5), module, XF_102::PARAM_LINK_1));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(98, 102.5), module, XF_102::PARAM_LINK_1));
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {
 		drawBase(vg, "XF-102");
@@ -599,8 +599,8 @@ struct XF104 : SchemeModuleWidget {
 			addChild(createLightCentered<TinyLight<BlueRedLight>>(Vec(142.5, 68.5 + offset), module, XF_104::LIGHT_AUTO_1 + i * 2));
 		}
 
-		addParam(createParamCentered<LightButton>(Vec(98, 102.5), module, XF_104::PARAM_LINK_1));
-		addParam(createParamCentered<LightButton>(Vec(98, 278.5), module, XF_104::PARAM_LINK_2));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(98, 102.5), module, XF_104::PARAM_LINK_1));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(98, 278.5), module, XF_104::PARAM_LINK_2));
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {
 		drawBase(vg, "XF-104");

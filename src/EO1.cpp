@@ -433,7 +433,7 @@ namespace {
 } // end namespace
 
 struct EO102 : SchemeModuleWidget {
-	LightButton *paramRun;
+	SubmarineLightButton *paramRun;
 	EO102(EO_102 *module) {
 		setModule(module);
 		this->box.size = Vec(405, 380);
@@ -484,7 +484,7 @@ struct EO102 : SchemeModuleWidget {
 		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(245, 320), module, EO_102::PARAM_TRIGGER));
 		addChild(createLightCentered<TinyLight<BlueLight>>(Vec(226, 333), module, EO_102::LIGHT_TRIGGER));
 		addParam(createParamCentered<SubSwitch2>(Vec(211.5, 280), module, EO_102::PARAM_RUNMODE));
-		paramRun = createParamCentered<LightButton>(Vec(245, 280), module, EO_102::PARAM_RUN);
+		paramRun = createParamCentered<SubmarineLightButton>(Vec(245, 280), module, EO_102::PARAM_RUN);
 		addParam(paramRun);
 
 		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(290, 320), module, EO_102::PARAM_INDEX_1));

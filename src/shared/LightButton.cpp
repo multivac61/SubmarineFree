@@ -8,12 +8,12 @@
 #include "../SubmarineFree.hpp"
 #include "color.hpp"
 
-LightButton::LightButton() {
+SubmarineLightButton::SubmarineLightButton() {
 	box.size.x = 16.0f;
 	box.size.y = 16.0f;
 }
 
-void LightButton::draw(const DrawArgs &args) {
+void SubmarineLightButton::draw(const DrawArgs &args) {
 	nvgSave(args.vg);
 
 	// Shadow
@@ -52,7 +52,7 @@ void LightButton::draw(const DrawArgs &args) {
 	Widget::draw(args);
 }
 
-void LightButton::drawLayer(const DrawArgs &args, int layer) {
+void SubmarineLightButton::drawLayer(const DrawArgs &args, int layer) {
 	if (layer == 1) {
 		float value = 0.0f;
 		if (getParamQuantity()) {
@@ -67,7 +67,7 @@ void LightButton::drawLayer(const DrawArgs &args, int layer) {
 	Widget::drawLayer(args, layer);
 }
 
-void LightButton::drawLight(const DrawArgs &args, bool enabled) {
+void SubmarineLightButton::drawLight(const DrawArgs &args, bool enabled) {
 	Rect lightbox = Rect(Vec(box.size.x / 4.0f, box.size.y / 4.0f), Vec(box.size.x / 2.0f, box.size.y / 4.0f));	
 	NVGcolor lcol = (enabled)?color:nvgRGB(0x4a,0x4a,0x4a);
 
@@ -88,7 +88,7 @@ void LightButton::drawLight(const DrawArgs &args, bool enabled) {
 	}
 }
 
-void LightButton::drawHalo(const DrawArgs &args) {
+void SubmarineLightButton::drawHalo(const DrawArgs &args) {
 	// Halo
 	// Don't draw halo if rendering in a framebuffer, e.g. screenshots or Module Browser
 	if (args.fb)

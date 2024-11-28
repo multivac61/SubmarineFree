@@ -397,7 +397,7 @@ namespace {
 } // end namespace
 
 struct HS101 : SchemeModuleWidget {
-	LightButton *paramRun;
+	SubmarineLightButton *paramRun;
 	HS101(HS_101 *module) {
 		setModule(module);
 		this->box.size = Vec(450, 380);
@@ -423,7 +423,7 @@ struct HS101 : SchemeModuleWidget {
 		addInput(createInputCentered<SilverPort>(Vec(47, 341), module, HS_101::INPUT_TRIGGER));
 		addOutput(createOutputCentered<SilverPort>(Vec(72, 341), module, HS_101::OUTPUT_TRIGGER));
 		
-		paramRun = createParamCentered<LightButton>(Vec(102, 341), module, HS_101::PARAM_RUN);
+		paramRun = createParamCentered<SubmarineLightButton>(Vec(102, 341), module, HS_101::PARAM_RUN);
 		addParam(paramRun);
 		addChild(createLightCentered<TinyLight<BlueLight>>(Vec(115, 341), module, HS_101::LIGHT_STORING));
 

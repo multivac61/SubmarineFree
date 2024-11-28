@@ -273,11 +273,11 @@ struct SN101 : SchemeModuleWidget {
 		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 140), module, SN_1::PARAM_EVOL));
 		lengthKnob = createParamCentered<SnapKnob<SubmarineSmallKnob<SubmarineLightknob>>>(Vec(15, 170), module, SN_1::PARAM_LENGTH);
 		addParam(lengthKnob);
-		addParam(createParamCentered<LightButton>(Vec(20, 210), module, SN_1::PARAM_HARM_2));
-		addParam(createParamCentered<LightButton>(Vec(20, 230), module, SN_1::PARAM_HARM_3));
-		addParam(createParamCentered<LightButton>(Vec(20, 250), module, SN_1::PARAM_HARM_4));
-		addParam(createParamCentered<LightButton>(Vec(20, 270), module, SN_1::PARAM_HARM_5));
-		addParam(createParamCentered<LightButton>(Vec(20, 290), module, SN_1::PARAM_HARM_8));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(20, 210), module, SN_1::PARAM_HARM_2));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(20, 230), module, SN_1::PARAM_HARM_3));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(20, 250), module, SN_1::PARAM_HARM_4));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(20, 270), module, SN_1::PARAM_HARM_5));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(20, 290), module, SN_1::PARAM_HARM_8));
 		addOutput(createOutputCentered<SilverPort>(Vec(15,350), module, SN_1::OUTPUT_1));
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {
