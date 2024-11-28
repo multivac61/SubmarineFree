@@ -520,7 +520,7 @@ struct WM_Base : WM_JsonLoader {
 		});
 
 #ifdef USING_CARDINAL_NOT_RACK
-    async_dialog_filebrowser(false, NULL, NULL, "Load Wavetable", [this](char* pathC) {
+    async_dialog_filebrowser(false, NULL, NULL, "Load Wavetable", [&](char* pathC) {
 		  loadCollectionFromDisk(pathC);
     });
 #else
@@ -1983,7 +1983,7 @@ struct WM101 : SizeableModuleWidget, WM_Base {
 		});
 
 #ifdef USING_CARDINAL_NOT_RACK
-    async_dialog_filebrowser(false, NULL, NULL, "Load Wavetable", [this](char* pathC) {
+    async_dialog_filebrowser(false, NULL, NULL, "Load Wavetable", [&](char* pathC) {
       // Append .vcv extension if no extension was given.
       std::string pathStr = pathC;
       if (system::getExtension(system::getFilename(pathStr)) == "") {
