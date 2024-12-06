@@ -53,5 +53,5 @@
 	void SubLightSlider::onDragMove(const event::DragMove &e) {
 		event::DragMove e2 = e;
 		e2.mouseDelta = Vec(e.mouseDelta.x, -e.mouseDelta.y);
-		LightKnob::onDragMove(e2);
+		SubmarineLightknob::onDragMove(e2);
 	}

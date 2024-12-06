@@ -395,7 +395,7 @@ namespace {
 } // end namespace
 
 struct LA216 : SchemeModuleWidget {
-	LightButton *resetButton;
+	SubmarineLightButton *resetButton;
 	LA216(LA_216 *module) {
 		setModule(module);
 		this->box.size = Vec(330, 380);
@@ -425,15 +425,15 @@ struct LA216 : SchemeModuleWidget {
 		addInput(createInputCentered<BluePort>(Vec(16.5, 65.5), module, LA_216::INPUT_EXT));
 		addChild(createLightCentered<TinyLight<BlueLight>>(Vec(31.5, 74.5), module, LA_216::LIGHT_EXT));
 
-		addParam(createParamCentered<SnapKnob<MedKnob<LightKnob>>>(Vec(32.5, 208.5), module, LA_216::PARAM_TRIGGER));
+		addParam(createParamCentered<SnapKnob<MedKnob<SubmarineLightknob>>>(Vec(32.5, 208.5), module, LA_216::PARAM_TRIGGER));
 		addParam(createParamCentered<SubSwitch2>(Vec(43, 65.5), module, LA_216::PARAM_EDGE));
 		addParam(createParamCentered<SubSwitch2>(Vec(20, 115.5), module, LA_216::PARAM_RUN));
-		resetButton = createParamCentered<LightButton>(Vec(16.5, 163), module, LA_216::PARAM_RESET);
+		resetButton = createParamCentered<SubmarineLightButton>(Vec(16.5, 163), module, LA_216::PARAM_RESET);
 		addParam(resetButton);
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(32.5, 270), module, LA_216::PARAM_TIME));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(18.5, 337), module, LA_216::PARAM_INDEX_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(46.5, 337), module, LA_216::PARAM_INDEX_2));
-		addParam(createParamCentered<SnapKnob<SmallKnob<LightKnob>>>(Vec(48.5, 163), module, LA_216::PARAM_PRE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(32.5, 270), module, LA_216::PARAM_TIME));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(18.5, 337), module, LA_216::PARAM_INDEX_1));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(46.5, 337), module, LA_216::PARAM_INDEX_2));
+		addParam(createParamCentered<SnapKnob<SubmarineSmallKnob<SubmarineLightknob>>>(Vec(48.5, 163), module, LA_216::PARAM_PRE));
 	}
 	void appendContextMenu(Menu *menu) override {
 		SchemeModuleWidget::appendContextMenu(menu);

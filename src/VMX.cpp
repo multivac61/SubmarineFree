@@ -486,7 +486,7 @@ struct VM101 : VMxxx {
 		addChild(display);
 
 		addInput(createInputCentered<SilverPort>(Vec(15,350), module, VM_xx1::INPUT_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 315), module, PARAM_ATTENUATOR));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 315), module, PARAM_ATTENUATOR));
 		addChild(createLightCentered<RightLight>(Vec(3, 332), module, LIGHT_LINK_LEFT));
 		addChild(createLightCentered<RightLight>(Vec(27, 332), module, LIGHT_LINK_RIGHT));
 	}
@@ -563,7 +563,7 @@ struct VM102 : VMxxx {
 		addChild(display2);
 
 		addInput(createInputCentered<SilverPort>(Vec(15,350), module, VM_102::INPUT_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 315), module, PARAM_ATTENUATOR));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 315), module, PARAM_ATTENUATOR));
 		addChild(createLightCentered<RightLight>(Vec(3, 332), module, LIGHT_LINK_LEFT));
 		addChild(createLightCentered<RightLight>(Vec(27, 332), module, LIGHT_LINK_RIGHT));
 	}
@@ -654,7 +654,7 @@ struct VM104 : VMxxx {
 		addChild(display4);
 
 		addInput(createInputCentered<SilverPort>(Vec(15,350), module, VM_102::INPUT_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 315), module, PARAM_ATTENUATOR));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 315), module, PARAM_ATTENUATOR));
 		addChild(createLightCentered<RightLight>(Vec(3, 332), module, LIGHT_LINK_LEFT));
 		addChild(createLightCentered<RightLight>(Vec(27, 332), module, LIGHT_LINK_RIGHT));
 	}
@@ -712,7 +712,7 @@ struct VM201 : VMxxx {
 		addChild(display);
 
 		addInput(createInputCentered<SilverPort>(Vec(35,330), module, VM_xx1::INPUT_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(115, 330), module, PARAM_ATTENUATOR));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(115, 330), module, PARAM_ATTENUATOR));
 		addChild(createLightCentered<RightLight>(Vec(3, 332), module, LIGHT_LINK_LEFT));
 		addChild(createLightCentered<RightLight>(Vec(147, 332), module, LIGHT_LINK_RIGHT));
 	}
@@ -748,7 +748,7 @@ struct VM202 : VMxxx {
 
 		addInput(createInputCentered<SilverPort>(Vec(35,330), module, VM_202::INPUT_1));
 		addInput(createInputCentered<RedPort>(Vec(70,330), module, VM_202::INPUT_1 + 1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(115, 330), module, PARAM_ATTENUATOR));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(115, 330), module, PARAM_ATTENUATOR));
 		addChild(createLightCentered<RightLight>(Vec(3, 332), module, LIGHT_LINK_LEFT));
 		addChild(createLightCentered<RightLight>(Vec(147, 332), module, LIGHT_LINK_RIGHT));
 	}
@@ -794,7 +794,7 @@ struct VM204 : VMxxx {
 		addChild(display4);
 
 		addInput(createInputCentered<SilverPort>(Vec(35,330), module, VM_xx4::INPUT_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(85, 330), module, PARAM_ATTENUATOR));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(85, 330), module, PARAM_ATTENUATOR));
 		addChild(createLightCentered<RightLight>(Vec(3, 332), module, LIGHT_LINK_LEFT));
 		addChild(createLightCentered<RightLight>(Vec(117, 332), module, LIGHT_LINK_RIGHT));
 	}

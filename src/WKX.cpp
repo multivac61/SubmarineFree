@@ -264,7 +264,7 @@ struct WK_101 : Module {
 namespace {
 
 	struct WK_Display : Widget {
-		LightKnob *knob;
+		SubmarineLightknob *knob;
 		char dspText[20];
 		
 		void drawLayer(const DrawArgs &args, int layer) override {
@@ -281,7 +281,7 @@ namespace {
 		}
 	};
 	
-	struct WK_Param : MedKnob<LightKnob> {
+	struct WK_Param : MedKnob<SubmarineLightknob> {
 		WK_101 *module;
 		unsigned int index;
 		void step() override {

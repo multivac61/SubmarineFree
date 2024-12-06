@@ -38,7 +38,7 @@ struct MZ_909: Module {
 };
 
 struct MZ909 : SchemeModuleWidget {
-	LightButton *onButton;
+	SubmarineLightButton *onButton;
 	MZ909(MZ_909 *module) {
 		setModule(module);
 		this->box.size = Vec(30, 380);
@@ -47,7 +47,7 @@ struct MZ909 : SchemeModuleWidget {
 
 		addInput(createInputCentered<SilverPort>(Vec(15, 285), module, MZ_909::INPUT_1));
 		addOutput(createOutputCentered<SilverPort>(Vec(15, 325), module, MZ_909::OUTPUT_1));
-		onButton = createParamCentered<LightButton>(Vec(15, 40), module, MZ_909::PARAM_ON);
+		onButton = createParamCentered<SubmarineLightButton>(Vec(15, 40), module, MZ_909::PARAM_ON);
 		addParam(onButton);
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {

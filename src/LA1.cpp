@@ -355,7 +355,7 @@ namespace {
 } // end namespace
 
 struct LA108 : SchemeModuleWidget {
-	LightButton *resetButton;
+	SubmarineLightButton *resetButton;
 	LA108(LA_108 *module) {
 		setModule(module);
 		this->box.size = Vec(300, 380);
@@ -383,15 +383,15 @@ struct LA108 : SchemeModuleWidget {
 		addInput(createInputCentered<BluePort>(Vec(16.5, 322.5), module, LA_108::INPUT_EXT));
 		addChild(createLightCentered<TinyLight<BlueLight>>(Vec(31.5, 313.5), module, LA_108::LIGHT_EXT));
 
-		addParam(createParamCentered<SnapKnob<MedKnob<LightKnob>>>(Vec(58, 320), module, LA_108::PARAM_TRIGGER));
+		addParam(createParamCentered<SnapKnob<MedKnob<SubmarineLightknob>>>(Vec(58, 320), module, LA_108::PARAM_TRIGGER));
 		addParam(createParamCentered<SubSwitch2>(Vec(89, 320.5), module, LA_108::PARAM_EDGE));
 		addParam(createParamCentered<SubSwitch2>(Vec(115, 320.5), module, LA_108::PARAM_RUN));
-		resetButton = createParamCentered<LightButton>(Vec(159, 320), module, LA_108::PARAM_RESET);
+		resetButton = createParamCentered<SubmarineLightButton>(Vec(159, 320), module, LA_108::PARAM_RESET);
 		addParam(resetButton);
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(190, 320), module, LA_108::PARAM_TIME));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(226, 327), module, LA_108::PARAM_INDEX_1));
-		addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(254, 327), module, LA_108::PARAM_INDEX_2));
-		addParam(createParamCentered<SnapKnob<SmallKnob<LightKnob>>>(Vec(283, 327), module, LA_108::PARAM_PRE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(190, 320), module, LA_108::PARAM_TIME));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(226, 327), module, LA_108::PARAM_INDEX_1));
+		addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(254, 327), module, LA_108::PARAM_INDEX_2));
+		addParam(createParamCentered<SnapKnob<SubmarineSmallKnob<SubmarineLightknob>>>(Vec(283, 327), module, LA_108::PARAM_PRE));
 	}
 	void appendContextMenu(Menu *menu) override {
 		SchemeModuleWidget::appendContextMenu(menu);

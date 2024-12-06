@@ -162,13 +162,13 @@ struct TF101 : SchemeModuleWidget {
 		addInput(createInputCentered<SilverPort>(Vec(16.5,293), module, TF<true>::INPUT_BG_BLUE));
 		addInput(createInputCentered<SilverPort>(Vec(16.5,347), module, TF<true>::INPUT_FONT_SIZE));
 
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 79), module, TF<true>::PARAM_FG_RED));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 119), module, TF<true>::PARAM_FG_GREEN));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 159), module, TF<true>::PARAM_FG_BLUE));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 213), module, TF<true>::PARAM_BG_RED));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 253), module, TF<true>::PARAM_BG_GREEN));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 293), module, TF<true>::PARAM_BG_BLUE));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(65, 347), module, TF<true>::PARAM_FONT_SIZE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 79), module, TF<true>::PARAM_FG_RED));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 119), module, TF<true>::PARAM_FG_GREEN));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 159), module, TF<true>::PARAM_FG_BLUE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 213), module, TF<true>::PARAM_BG_RED));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 253), module, TF<true>::PARAM_BG_GREEN));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 293), module, TF<true>::PARAM_BG_BLUE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(65, 347), module, TF<true>::PARAM_FONT_SIZE));
 
 		addChild(createLightCentered<MediumLight<RGBLight>>(Vec(14.5, 55.5), module, TF<true>::LIGHT_FG_RED));
 		addChild(createLightCentered<MediumLight<RGBLight>>(Vec(14.5, 189.5), module, TF<true>::LIGHT_BG_RED));

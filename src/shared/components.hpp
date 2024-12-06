@@ -93,9 +93,9 @@ struct SubSwitchHorz : k {
 // Buttons
 //////////////////
 
-struct LightButton : app::Switch {
+struct SubmarineLightButton : app::Switch {
 	NVGcolor color = SUBLIGHTBLUE;
-	LightButton(); 
+	SubmarineLightButton(); 
 	void draw(const DrawArgs &args) override;
 	void drawLayer(const DrawArgs &args, int layer) override;
 	void drawLight(const DrawArgs &args, bool enabled);
@@ -107,7 +107,7 @@ struct LightButton : app::Switch {
 //////////////////
 
 
-struct LightKnob : Knob {
+struct SubmarineLightknob : Knob {
 	/** Angles in radians */
 	float minAngle = -0.83*M_PI;
 	float maxAngle = 0.83*M_PI;
@@ -117,7 +117,7 @@ struct LightKnob : Knob {
 	NVGcolor color = SUBLIGHTBLUE;
 	void setEnabled(int val);
 	void setRadius(int r);
-	LightKnob() {
+	SubmarineLightknob() {
 		smooth = false;
 	}
 	void draw(const DrawArgs &args) override;
@@ -134,8 +134,8 @@ struct TinyKnob : K {
 };
 
 template <class K>
-struct SmallKnob : K {
-	SmallKnob() {
+struct SubmarineSmallKnob : K {
+	SubmarineSmallKnob() {
 		K::setRadius(12.0f);
 	}
 };
@@ -170,13 +170,13 @@ struct NarrowKnob : K {
 };
 
 template <class K>
-struct RedKnob : K {
-	RedKnob() {
+struct SubmarineRedKnob : K {
+	SubmarineRedKnob() {
 		K::color = SUBLIGHTRED;
 	}
 };
 
-struct SubLightSlider : LightKnob {
+struct SubLightSlider : SubmarineLightknob {
 	void draw(const DrawArgs &args) override;
 	void onDragMove(const event::DragMove &e) override;
 };

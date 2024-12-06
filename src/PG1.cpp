@@ -57,7 +57,7 @@ struct PG104 : SchemeModuleWidget {
 
 			addOutput(createOutputCentered<BluePort>(Vec(15, 89.5 + offset), module, PG_1<4>::OUTPUT_1 + i));
 
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(15, 59.5 + offset), module, PG_1<4>::PARAM_1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(15, 59.5 + offset), module, PG_1<4>::PARAM_1 + i));
 		}
 	}
 	void appendContextMenu(Menu *menu) override {
@@ -93,7 +93,7 @@ struct PG112 : SchemeModuleWidget {
 
 			addOutput(createOutputCentered<BluePort>(Vec(104.5, 31.5 + offset), module, PG_1<12>::OUTPUT_1 + i));
 
-			addParam(createParamCentered<SmallKnob<LightKnob>>(Vec(45, 31.5 + offset), module, PG_1<12>::PARAM_1 + i));
+			addParam(createParamCentered<SubmarineSmallKnob<SubmarineLightknob>>(Vec(45, 31.5 + offset), module, PG_1<12>::PARAM_1 + i));
 		}
 	}
 	void appendContextMenu(Menu *menu) override {

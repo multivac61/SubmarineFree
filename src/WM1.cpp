@@ -519,6 +519,11 @@ struct WM_Base : WM_JsonLoader {
 			osdialog_filters_free(filters);
 		});
 
+#ifdef USING_CARDINAL_NOT_RACK
+    async_dialog_filebrowser(false, NULL, NULL, "Load Wavetable", [&](char* pathC) {
+		  loadCollectionFromDisk(pathC);
+    });
+#else
 		char* pathC = osdialog_file(OSDIALOG_OPEN, dir.c_str(), filename.c_str(), filters);
 		if (!pathC) {
 			// Fail silently
@@ -529,6 +534,7 @@ struct WM_Base : WM_JsonLoader {
 		});
 
 		loadCollectionFromDisk(pathC);
+#endif
 	}
 	void drawBillboardBase(NVGcontext *vg, rack::math::Rect box, std::vector<NVGcolor> currentColors, std::vector<std::string> currentLabels, bool draw3d) {
 		float blockHeight = box.size.y / currentColors.size();
@@ -1976,6 +1982,17 @@ struct WM101 : SizeableModuleWidget, WM_Base {
 			osdialog_filters_free(filters);
 		});
 
+#ifdef USING_CARDINAL_NOT_RACK
+    async_dialog_filebrowser(false, NULL, NULL, "Load Wavetable", [&](char* pathC) {
+      // Append .vcv extension if no extension was given.
+      std::string pathStr = pathC;
+      if (system::getExtension(system::getFilename(pathStr)) == "") {
+        pathStr += ".wmCollection";
+      }
+
+      saveCollectionToDisk(cb, pathStr);
+    });
+#else
 		char* pathC = osdialog_file(OSDIALOG_SAVE, dir.c_str(), filename.c_str(), filters);
 		if (!pathC) {
 			// Fail silently
@@ -1992,6 +2009,7 @@ struct WM101 : SizeableModuleWidget, WM_Base {
 		}
 
 		saveCollectionToDisk(cb, pathStr);
+#endif
 	}
 	void saveCollectionToDisk(ColorCollectionButton *cb, std::string pathStr) {
 		json_t *settings = json_object();

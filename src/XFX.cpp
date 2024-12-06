@@ -100,7 +100,7 @@ namespace {
 		XF_Correlator *correlator;
 	}; 
 
-	struct XF_LightKnob : LargeKnob<NarrowKnob<LightKnob>> {
+	struct XF_SubmarineLightknob : LargeKnob<NarrowKnob<SubmarineLightknob>> {
 		int cv = 0;
 		int link = 0;
 		void step() override {
@@ -229,7 +229,7 @@ struct XF_101 : XF {
 struct XF101 : SchemeModuleWidget {
 	XF101(XF_101 *module) {
 		setModule(module);
-		XF_LightKnob *fader;
+		XF_SubmarineLightknob *fader;
 		this->box.size = Vec(180, 380);
 		addChild(new SchemePanel(this->box.size));
 
@@ -241,7 +241,7 @@ struct XF101 : SchemeModuleWidget {
 
 		addParam(createParamCentered<SubSwitch2>(Vec(48, 58.5), module, XF_101::PARAM_CV_1));
 		addParam(createParamCentered<SubSwitch3>(Vec(132, 58.5), module, XF_101::PARAM_MODE_1));
-		fader = createParamCentered<XF_LightKnob>(Vec(90, 58), module, XF_101::PARAM_FADE_1);
+		fader = createParamCentered<XF_SubmarineLightknob>(Vec(90, 58), module, XF_101::PARAM_FADE_1);
 		fader->cv = XF_101::INPUT_CV_1;
 		fader->link = 0;
 		addParam(fader);
@@ -378,7 +378,7 @@ struct XF_102 : XF {
 struct XF102 : SchemeModuleWidget {
 	XF102(XF_102 *module) {
 		setModule(module);
-		XF_LightKnob *fader;
+		XF_SubmarineLightknob *fader;
 		this->box.size = Vec(180, 380);
 		addChild(new SchemePanel(this->box.size));
 		for (int i = 0; i < XF_102::deviceCount; i++) {
@@ -391,7 +391,7 @@ struct XF102 : SchemeModuleWidget {
 
 			addParam(createParamCentered<SubSwitch2>(Vec(48, 58.5 + offset), module, XF_102::PARAM_CV_1 + i));
 			addParam(createParamCentered<SubSwitch3>(Vec(132, 58.5 + offset), module, XF_102::PARAM_MODE_1 + i));
-			fader = createParamCentered<XF_LightKnob>(Vec(90, 58 + offset), module, XF_102::PARAM_FADE_1 + i);
+			fader = createParamCentered<XF_SubmarineLightknob>(Vec(90, 58 + offset), module, XF_102::PARAM_FADE_1 + i);
 			fader->cv = XF_102::INPUT_CV_1 + i;
 			fader->link = i?XF_102::PARAM_LINK_1:0;
 			addParam(fader);
@@ -401,7 +401,7 @@ struct XF102 : SchemeModuleWidget {
 			addChild(createLightCentered<TinyLight<BlueRedLight>>(Vec(142.5, 68.5 + offset), module, XF_102::LIGHT_AUTO_1 + i * 2));
 		}
 
-		addParam(createParamCentered<LightButton>(Vec(98, 102.5), module, XF_102::PARAM_LINK_1));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(98, 102.5), module, XF_102::PARAM_LINK_1));
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {
 		drawBase(vg, "XF-102");
@@ -565,7 +565,7 @@ struct XF_104 : XF {
 struct XF104 : SchemeModuleWidget {
 	XF104(XF_104 *module) {
 		setModule(module);
-		XF_LightKnob *fader;
+		XF_SubmarineLightknob *fader;
 		this->box.size = Vec(180, 380);
 		addChild(new SchemePanel(this->box.size));
 		for (int i = 0; i < XF_104::deviceCount; i++) {
@@ -578,7 +578,7 @@ struct XF104 : SchemeModuleWidget {
 
 			addParam(createParamCentered<SubSwitch2>(Vec(48, 58.5 + offset), module, XF_104::PARAM_CV_1 + i));
 			addParam(createParamCentered<SubSwitch3>(Vec(132, 58.5 + offset), module, XF_104::PARAM_MODE_1 + i));
-			fader = createParamCentered<XF_LightKnob>(Vec(90, 58 + offset), module, XF_104::PARAM_FADE_1 + i);
+			fader = createParamCentered<XF_SubmarineLightknob>(Vec(90, 58 + offset), module, XF_104::PARAM_FADE_1 + i);
 			fader->cv = XF_104::INPUT_CV_1 + i;
 			switch (i) {
 				case 0:
@@ -599,8 +599,8 @@ struct XF104 : SchemeModuleWidget {
 			addChild(createLightCentered<TinyLight<BlueRedLight>>(Vec(142.5, 68.5 + offset), module, XF_104::LIGHT_AUTO_1 + i * 2));
 		}
 
-		addParam(createParamCentered<LightButton>(Vec(98, 102.5), module, XF_104::PARAM_LINK_1));
-		addParam(createParamCentered<LightButton>(Vec(98, 278.5), module, XF_104::PARAM_LINK_2));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(98, 102.5), module, XF_104::PARAM_LINK_1));
+		addParam(createParamCentered<SubmarineLightButton>(Vec(98, 278.5), module, XF_104::PARAM_LINK_2));
 	}
 	void render(NVGcontext *vg, SchemeCanvasWidget *canvas) override {
 		drawBase(vg, "XF-104");
@@ -725,7 +725,7 @@ struct XF_201 : XF {
 struct XF201 : SchemeModuleWidget {
 	XF201(XF_201 *module) {
 		setModule(module);
-		XF_LightKnob *fader;
+		XF_SubmarineLightknob *fader;
 		this->box.size = Vec(120, 380);
 		addChild(new SchemePanel(this->box.size));
 		for (int i = 0; i < XF_201::deviceCount; i++) {
@@ -741,7 +741,7 @@ struct XF201 : SchemeModuleWidget {
 
 			addParam(createParamCentered<SubSwitch2>(Vec(35, 167 + offset), module, XF_201::PARAM_CV_1 + i));
 			addParam(createParamCentered<SubSwitch3>(Vec(72, 167 + offset), module, XF_201::PARAM_MODE_1 + i));
-			fader = createParamCentered<XF_LightKnob>(Vec(60, 78 + offset), module, XF_201::PARAM_FADE_1 + i);
+			fader = createParamCentered<XF_SubmarineLightknob>(Vec(60, 78 + offset), module, XF_201::PARAM_FADE_1 + i);
 			fader->cv = XF_201::INPUT_CV_1 + i;
 			fader->link = 0;
 			addParam(fader);
@@ -787,7 +787,7 @@ struct XF201 : SchemeModuleWidget {
 struct XF301 : SchemeModuleWidget {
 	XF301(XF_201 *module) {
 		setModule(module);
-		XF_LightKnob *fader;
+		XF_SubmarineLightknob *fader;
 		this->box.size = Vec(30, 380);
 		addChild(new SchemePanel(this->box.size));
 
@@ -795,7 +795,7 @@ struct XF301 : SchemeModuleWidget {
 		addInput(createInputCentered<SilverPort>(Vec(15,30), module, XF_201::INPUT_A_1));
 		addInput(createInputCentered<RedPort>(Vec(15,55), module, XF_201::INPUT_AR_1));
 
-		fader = createParamCentered<SmallKnob<XF_LightKnob>>(Vec(15, 105), module, XF_201::PARAM_FADE_1);
+		fader = createParamCentered<SubmarineSmallKnob<XF_SubmarineLightknob>>(Vec(15, 105), module, XF_201::PARAM_FADE_1);
 		fader->cv = XF_201::INPUT_CV_1;
 		fader->link = 0;
 		addParam(fader);
@@ -926,7 +926,7 @@ struct XF_202 : XF {
 struct XF202 : SchemeModuleWidget {
 	XF202(XF_202 *module) {
 		setModule(module);
-		XF_LightKnob *fader;
+		XF_SubmarineLightknob *fader;
 		this->box.size = Vec(120, 380);
 		addChild(new SchemePanel(this->box.size));
 		for (int i = 0; i < XF_202::deviceCount; i++) {
@@ -942,7 +942,7 @@ struct XF202 : SchemeModuleWidget {
 
 			addParam(createParamCentered<SubSwitch2>(Vec(35, 167 + offset), module, XF_202::PARAM_CV_1 + i));
 			addParam(createParamCentered<SubSwitch3>(Vec(72.5, 167 + offset), module, XF_202::PARAM_MODE_1 + i));
-			fader = createParamCentered<XF_LightKnob>(Vec(60, 78 + offset), module, XF_202::PARAM_FADE_1 + i);
+			fader = createParamCentered<XF_SubmarineLightknob>(Vec(60, 78 + offset), module, XF_202::PARAM_FADE_1 + i);
 			fader->cv = XF_202::INPUT_CV_1 + i;
 			fader->link = 0;
 			addParam(fader);

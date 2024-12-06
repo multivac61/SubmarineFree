@@ -433,7 +433,7 @@ namespace {
 } // end namespace
 
 struct EO102 : SchemeModuleWidget {
-	LightButton *paramRun;
+	SubmarineLightButton *paramRun;
 	EO102(EO_102 *module) {
 		setModule(module);
 		this->box.size = Vec(405, 380);
@@ -474,22 +474,22 @@ struct EO102 : SchemeModuleWidget {
 			addInput(port);
 			display->ports[i] = port;
 			addParam(createParamCentered<SubSwitch2>(Vec(16.5 + 75 * i, 280), module, EO_102::PARAM_MODE_1 + i));
-			addParam(createParamCentered<MedKnob<LightKnob>>(Vec(50 + 75 * i, 320), module, EO_102::PARAM_OFFSET_1 + i));
-			addParam(createParamCentered<SnapKnob<MedKnob<LightKnob>>>(Vec(50 + 75 * i, 270), module, EO_102::PARAM_SCALE_1 + i));
+			addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(50 + 75 * i, 320), module, EO_102::PARAM_OFFSET_1 + i));
+			addParam(createParamCentered<SnapKnob<MedKnob<SubmarineLightknob>>>(Vec(50 + 75 * i, 270), module, EO_102::PARAM_SCALE_1 + i));
 		}
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(172.5, 320), module, EO_102::PARAM_TIME));
-		addParam(createParamCentered<SnapKnob<MedKnob<LightKnob>>>(Vec(172.5, 270), module, EO_102::PARAM_PRE));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(172.5, 320), module, EO_102::PARAM_TIME));
+		addParam(createParamCentered<SnapKnob<MedKnob<SubmarineLightknob>>>(Vec(172.5, 270), module, EO_102::PARAM_PRE));
 
 		addInput(createInputCentered<SilverPort>(Vec(211.5, 326.5), module, EO_102::INPUT_EXT));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(245, 320), module, EO_102::PARAM_TRIGGER));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(245, 320), module, EO_102::PARAM_TRIGGER));
 		addChild(createLightCentered<TinyLight<BlueLight>>(Vec(226, 333), module, EO_102::LIGHT_TRIGGER));
 		addParam(createParamCentered<SubSwitch2>(Vec(211.5, 280), module, EO_102::PARAM_RUNMODE));
-		paramRun = createParamCentered<LightButton>(Vec(245, 280), module, EO_102::PARAM_RUN);
+		paramRun = createParamCentered<SubmarineLightButton>(Vec(245, 280), module, EO_102::PARAM_RUN);
 		addParam(paramRun);
 
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(290, 320), module, EO_102::PARAM_INDEX_1));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(332, 320), module, EO_102::PARAM_INDEX_2));
-		addParam(createParamCentered<MedKnob<LightKnob>>(Vec(376, 320), module, EO_102::PARAM_INDEX_3));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(290, 320), module, EO_102::PARAM_INDEX_1));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(332, 320), module, EO_102::PARAM_INDEX_2));
+		addParam(createParamCentered<MedKnob<SubmarineLightknob>>(Vec(376, 320), module, EO_102::PARAM_INDEX_3));
 	}
 	void appendContextMenu(Menu *menu) override {
 		if (!module)
